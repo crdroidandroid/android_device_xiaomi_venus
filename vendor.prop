@@ -1,2 +1,5 @@
 # Bluetooth
 bluetooth.device.default_name=Xiaomi MI 11
+
+# USB
+vendor.usb.product_string=Xiaomi MI 11
