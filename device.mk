@@ -11,9 +11,6 @@ $(call inherit-product, device/xiaomi/sm8350-common/common.mk)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina)
 
-# Fingerprint
-TARGET_HAS_UDFPS := true
-
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
@@ -25,12 +22,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # PowerShare
 PRODUCT_PACKAGES += \
-    vendor.lineage.powershare@1.0-service.xiaomi
+    vendor.lineage.powershare@1.0-service.xiaomi_sm8350
 
 # Sensors
-PRODUCT_PACKAGES += \
-    sensors.xiaomi.udfps
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
@@ -40,7 +34,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi
+    vendor.lineage.touch@1.0-service.xiaomi_sm8350
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/mars/mars-vendor.mk)
