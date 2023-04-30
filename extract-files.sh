@@ -14,7 +14,7 @@ fi
 set -e
 
 # Required!
-export DEVICE=mars
+export DEVICE=venus
 export DEVICE_COMMON=sm8350-common
 export VENDOR=xiaomi
 

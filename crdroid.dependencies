@@ -20,8 +20,8 @@
     "remote": "crdroid-gitlab"
   },
   {
-    "repository": "crdroidandroid/proprietary_vendor_xiaomi_mars",
-    "target_path": "vendor/xiaomi/mars",
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_venus",
+    "target_path": "vendor/xiaomi/venus",
     "remote": "crdroid-gitlab"
   },
   {
@@ -30,7 +30,7 @@
     "remote": "crdroid-gitlab"
   },
   {
-    "repository": "crdroidandroid/android_kernel_xiaomi_mars",
-    "target_path": "kernel/xiaomi/mars"
+    "repository": "crdroidandroid/android_kernel_xiaomi_venus",
+    "target_path": "kernel/xiaomi/venus"
   }
 ]

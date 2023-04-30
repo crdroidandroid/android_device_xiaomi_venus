@@ -14,7 +14,6 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
-        <item>9</item>
     </string-array>
 
     <!-- An array of triplets made of (camera ID, qualities, framerates).

@@ -4,23 +4,20 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/mars
+DEVICE_PATH := device/xiaomi/venus
 
 # Inherit from sm8350-common
 include device/xiaomi/sm8350-common/BoardConfigCommon.mk
 
 # Board
-TARGET_BOOTLOADER_BOARD_NAME := mars
+TARGET_BOOTLOADER_BOARD_NAME := venus
 
 # Display
 TARGET_SCREEN_DENSITY := 560
 
-# OTA assert
-TARGET_OTA_ASSERT_DEVICE := mars,star
-
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mars
-TARGET_KERNEL_CONFIG := vendor/mars_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/venus
+TARGET_KERNEL_CONFIG := vendor/venus_defconfig
 TARGET_KERNEL_CLANG_VERSION := prelude
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-prelude/bin
 KERNEL_SUPPORTS_LLVM_TOOLS := true
@@ -45,4 +42,4 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
 
 # Include proprietary files
-include vendor/xiaomi/mars/BoardConfigVendor.mk
+include vendor/xiaomi/venus/BoardConfigVendor.mk

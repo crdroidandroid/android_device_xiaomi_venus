@@ -1,11 +1,11 @@
 Copyright (C) 2023 The LineageOS Project
 
-Device configuration for Xiaomi Mi 11 Pro
+Device configuration for Xiaomi Mi 11
 =========================================
 
-The Xiaomi Mi 11 Pro (codenamed _"mars"_) is a flagship smartphone from Xiaomi.
+The Xiaomi Mi 11 (codenamed _"venus"_) is a flagship smartphone from Xiaomi.
 
-It was released in April 2021.
+It was released in December 2020.
 
 ## Device specifications
 
@@ -17,10 +17,10 @@ GPU     | Adreno 660
 Memory  | 8/12 GB, LPDDR5
 Storage | 128/256 GB, UFS 3.1
 Shipped Android Version | 11
-Battery | Li-Po 5000 mAh, non-removable
+Battery | Li-Po 4600 mAh, non-removable
 Display | 1440 x 3200 pixels, 6.81 inches (~515 ppi density)
-Camera  | 50 MP main, 8 MP periscope telephoto, 13 MP ultrawide, 20 MP front
+Camera  | 108 MP main, 13 MP ultrawide, 5 MP macro, 20 MP front
 
 ## Device picture
 
-![Xiaomi Mi 11 Pro](https://s2.loli.net/2023/03/27/YlSZmFPnJQ8bfd9.png "Xiaomi Mi 11 Pro")
+![Xiaomi Mi 11](https://cdn.cnbj1.fds.api.mi-img.com/product-images/mi11/specs-product.png "Xiaomi Mi 11")

@@ -30,7 +30,7 @@
     <!-- left smart PA -->
     <ctl name="DSP1 Firmware" value="Protection" />
     <ctl name="DSP1 Preload Switch" value="1" />
-    <ctl name="DRE DRE Switch" value="0" />
+    <ctl name="DRE DRE Switch" value="1" />
     <ctl name="PCM Source" value="None" />
     <ctl name="PCM Soft Ramp" value="4ms" />
     <ctl name="AMP PCM Gain" value="18" />
@@ -47,11 +47,10 @@
      <!-- right smart PA -->
     <ctl name="RCV DSP1 Firmware" value="Protection" />
     <ctl name="RCV DSP1 Preload Switch" value="1" />
-    <ctl name="RCV DRE DRE Switch" value="0" />
+    <ctl name="RCV DRE DRE Switch" value="1" />
     <ctl name="RCV PCM Source" value="None" />
     <ctl name="RCV PCM Soft Ramp" value="4ms" />
-    <ctl name="RCV AMP PCM Gain" value="18" />
-    <ctl name="RCV Digital PCM Volume" value="697" />
+    <ctl name="RCV AMP PCM Gain" value="0" />
     <ctl name="RCV DSP Block Bypass" value="Off" />
     <ctl name="RCV ASP TX1 Source" value="Zero" />
     <ctl name="RCV ASP TX2 Source" value="Zero" />
@@ -71,7 +70,7 @@
     <ctl name="Ultrasound Enable" value="Off" />
     <ctl name="Ultrasound RampDown" value="Off"/>
     <ctl name="Ultrasound Event" value="0"/>
-    <ctl name="Ultrasound Mode" value="0"/>
+    <ctl name="Ultrasound Mode" value="833"/>
     <ctl name="Ultrasound Rx Port" value="Off"/>
     <ctl name="Ultrasound Microphone Index" value="0"/>
     <ctl name="Ultrasound Suspend" value="0"/>
@@ -802,32 +801,26 @@
     </path>
 
     <path name="ultrasound-proximity">
-        <ctl name="Mi_Ultrasound Enable" value="On" />
-        <!--ctl name="Mi_Ultrasound Mode" value="810" />
-        <ctl name="Mi_Ultrasound Mode" value="833" />
-        <ctl name="Mi_Ultrasound Debug Mode" value="1" />
-        <ctl name="Mi_Ultrasound Log Level" value="7" />-->
+        <ctl name="Ultrasound Enable" value="On" />
+        <!--ctl name="Ultrasound Mode" value="810" /-->
+        <!--ctl name="Ultrasound Mode" value="833" /-->
+        <!--ctl name="Ultrasound Debug Mode" value="1" /-->
+        <!--ctl name="Ultrasound Log Level" value="7" /-->
     </path>
 
     <path name="ultrasound-proximity-output">
-        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
     </path>
 
     <path name="ultrasound-proximity-output handset">
-        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
     </path>
 
     <path name="ultrasound-proximity-output speaker">
-        <ctl name="Mi_Ultrasound Rx Device" value="1"/>
-        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_96" />
-        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
-        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
     </path>
 
-    <path name="ultrasound-proximity-output speaker-and-headphones">
-        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_96" />
-        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
-        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+    <path name="ultrasound-proximity-output ultrasund-rx">
+    </path>
+
+    <path name="ultrasound-proximity-output speaker-and-headphones">>
     </path>
 
     <path name="ultrasound-cover1">
@@ -846,15 +839,15 @@
     </path>
 
     <path name="ultrasound-rampdown">
-       <!--ctl name="Mi_Ultrasound RampDown" value="On"/-->
+       <ctl name="Ultrasound RampDown" value="On"/>
     </path>
 
     <path name="ultrasound-screen-on">
-       <ctl name="Mi_Ultrasound Event" value="1"/>
+       <ctl name="Ultrasound Event" value="1"/>
     </path>
 
     <path name="ultrasound-on">
-       <ctl name="Mi_Ultrasound Tx Port" value="On"/>
+       <ctl name="Ultrasound Rx Port" value="On"/>
     </path>
 
     <path name="ultrasound-output-stereo">
@@ -862,27 +855,25 @@
     </path>
 
     <path name="ultrasound-suspend">
-       <ctl name="Mi_Ultrasound Suspend" value="1"/>
+       <ctl name="Ultrasound Suspend" value="1"/>
     </path>
 
     <path name="ultrasound-stop-report">
-       <ctl name="Mi_Ultrasound ReportNone" value="1"/>
+       <ctl name="Ultrasound ReportNone" value="1"/>
     </path>
 
     <!--  Ultrasound Output Device  -->
     <path name="ultrasound-output">
-        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_96" />
-        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
-        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
         <ctl name="RCV PCM Source" value="DSP" />
+        <ctl name="RCV DRE DRE Switch" value="1" />
         <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
         <ctl name="RCV ASPRX2 Slot Position" value="4" />
+        <!--  ctl name="RCV ASPRX2 Slot Position" value="4" /  -->
     </path>
 
     <!--  Ultrasound Input Device  -->
     <path name="ultrasound-input">
         <ctl name="Ultrasound Custom Setting 1" value="1" />
-        <ctl name="TX_CDC_DMA_TX_4 SampleRate" value="KHZ_96" />
         <ctl name="TX_CDC_DMA_TX_4 Channels" value="One" />
         <ctl name="TX_DEC4 Volume" value="84" />
         <ctl name="TX DEC4 MUX" value="SWR_MIC" />
@@ -906,11 +897,14 @@
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
         <ctl name="TX0 MODE" value="ADC_LP" />
-	<ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
+        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
         <ctl name="ADC1_MIXER Switch" value="1" />
         <ctl name="ADC3 ChMap" value="SWRM_TX3_CH1" />
-
-
+        <ctl name="HDR34 MUX" value="HDR34" />
+        <ctl name="TX2 MODE" value="ADC_LP" />
+        <ctl name="ADC3_MIXER Switch" value="1" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="8" />
     </path>
 
     <!--  TDM Output Device  -->
@@ -923,7 +917,6 @@
        <ctl name="ASPRX1 Slot Position" value="1" />
        <ctl name="ASPTX Ref" value="Ref" />
        <ctl name="RCV AMP PCM Gain" value="18" />
-       <ctl name="RCV Digital PCM Volume" value="817" />
        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
        <ctl name="RCV ASPRX1 Slot Position" value="0" />
@@ -949,7 +942,6 @@
        <ctl name="RCV ASPRX1 Slot Position" value="0" />
        <ctl name="PCM Source" value="None" />
        <ctl name="RCV AMP PCM Gain" value="18" />
-       <ctl name="RCV Digital PCM Volume" value="817" />
        <ctl name="RCV PCM Source" value="DSP" />
        <ctl name="RCV ASPTX Ref" value="Ref" />
     </path>
@@ -968,8 +960,6 @@
 
     <path name="voice-speaker-stereo">
         <path name="speaker" />
-        <ctl name="RCV AMP PCM Gain" value="18" />
-        <ctl name="RCV Digital PCM Volume" value="769" />
         <ctl name="Fast Use Case Delta File" value="spk1_voice_delta.txt"/>
         <ctl name="RCV Fast Use Case Delta File" value="spk2_voice_delta.txt"/>
     </path>
@@ -979,17 +969,16 @@
     </path>
 
     <path name="handset">
-	<ctl name="TERT_TDM_RX_0 Channels" value="One" />
+        <ctl name="TERT_TDM_RX_0 Channels" value="One" />
         <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
         <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
         <ctl name="RCV ASPRX1 Slot Position" value="0" />
         <ctl name="RCV ASPTX Ref" value="Ref" />
         <ctl name="RCV PCM Source" value="DSP" />
-        <ctl name="RCV AMP PCM Gain" value="3" />
-        <ctl name="RCV Digital PCM Volume" value="697" />
         <ctl name="Cirrus SP Usecase Config" value="None" />
         <ctl name="RCV Fast Use Case Delta File" value="rcv_voice_delta.txt"/>
     </path>
+
 
     <!--  WCD Output devices -->
     <path name="headphones">
@@ -1022,34 +1011,22 @@
 
     <!--  One MIC devices -->
     <path name="amic2">
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
+        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
         <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
         <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
         <ctl name="DEC0_BCS Switch" value="1" />
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
-        <ctl name="MBHC ChMap" value="SWRM_TX2_CH3" />
+        <ctl name="MBHC ChMap" value="SWRM_TX3_CH3" />
         <ctl name="TX1 MODE" value="ADC_LP" />
-        <ctl name="BCS Channel" value="CH6" />
+        <ctl name="BCS Channel" value="CH10" />
         <ctl name="HDR12 MUX" value="NO_HDR12" />
-        <ctl name="ADC2_MIXER Switch" value="1" />
-    </path>
-
-    <path name="amic3">
-        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
-        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
-        <ctl name="TX1 MODE" value="ADC_LP" />
-        <ctl name="HDR12 MUX" value="NO_HDR12" />
-        <ctl name="ADC2_BCS Disable" value="1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
     </path>
 
     <path name="headset-mic">
-        <ctl name="TX_DEC0 Volume" value="84" />
+        <ctl name="TX_DEC2 Volume" value="84" />
         <path name="amic2" />
     </path>
 
@@ -1072,10 +1049,6 @@
         <ctl name="ADC4_MIXER Switch" value="1" />
     </path>
 
-    <path name="back-mic">
-        <path name="amic3" />
-    </path>
-
     <path name="asr-mic">
         <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
         <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
@@ -1091,25 +1064,10 @@
         <ctl name="ADC4 MUX" value="INP5" />
         <ctl name="TX3 MODE" value="ADC_LP" />
         <ctl name="ADC4_MIXER Switch" value="1" />
-        <ctl name="ADC1 Volume" value="16" />
-        <ctl name="ADC4 Volume" value="16" />
-    </path>
-
-    <path name="spkrid-mic">
-        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
-        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
-        <ctl name="TX DEC1 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX1" value="SWR_MIC4" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC9" />
-        <ctl name="TX0 MODE" value="ADC_LP" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="ADC4 ChMap" value="SWRM_TX3_CH2" />
-        <ctl name="ADC4 MUX" value="INP5" />
-        <ctl name="TX3 MODE" value="ADC_LP" />
-        <ctl name="ADC4_MIXER Switch" value="1" />
+        <ctl name="TX_DEC0 Volume" value="90" />
+        <ctl name="TX_DEC1 Volume" value="90" />
+        <ctl name="ADC1 Volume" value="20" />
+        <ctl name="ADC4 Volume" value="20" />
     </path>
 
     <!-- Dual MIC devices -->
@@ -1157,64 +1115,5 @@
 
     <path name="camcorder-dmic">
         <path name="handset-dmic-dual-adc" />
-    </path>
-
-    <!-- Three MIC devices -->
-    <path name="three-mic">
-        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Three" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="TX0 MODE" value="ADC_LP" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="TX DEC1 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX1" value="SWR_MIC9" />
-        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
-        <ctl name="ADC4 ChMap" value="SWRM_TX3_CH2" />
-        <ctl name="ADC4 MUX" value="INP5" />
-        <ctl name="TX3 MODE" value="ADC_LP" />
-        <ctl name="ADC4_MIXER Switch" value="1" />
-        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
-        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
-        <ctl name="TX1 MODE" value="ADC_LP" />
-        <ctl name="HDR12 MUX" value="NO_HDR12" />
-        <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2_MIXER Switch" value="1" />
-    </path>
-
-   <path name="camcorder-tmic-azoom">
-        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Three" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="TX0 MODE" value="ADC_LP" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-
-        <ctl name="TX DEC1 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX1" value="SWR_MIC9" />
-        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
-        <ctl name="ADC4 ChMap" value="SWRM_TX3_CH2" />
-        <ctl name="ADC4 MUX" value="INP5" />
-        <ctl name="TX3 MODE" value="ADC_LP" />
-        <ctl name="ADC4_MIXER Switch" value="1" />
-
-        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
-        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
-        <ctl name="TX1 MODE" value="ADC_LP" />
-        <ctl name="HDR12 MUX" value="NO_HDR12" />
-        <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2_MIXER Switch" value="1" />
-
-        <ctl name="ADC1 Volume" value="0" />
-        <ctl name="ADC2 Volume" value="0" />
-        <ctl name="ADC4 Volume" value="0" />
     </path>
 </mixer>
